@@ -29,6 +29,15 @@ fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error
     Ok(qs)
 }
 
+static mut progressVal: f32 = 0.0;
+
+fn progress() {
+    cmd::clear();
+    unsafe {
+        println!("{:.2}%\n", progressVal);
+    }
+}
+
 fn main() {
     cmd::clear();
     eprint!("{}", cmd::primary(&"Questions File: ".to_string()));
