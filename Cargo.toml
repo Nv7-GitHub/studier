@@ -1,7 +1,10 @@
 [package]
-name = "studier_rs"
+name = "studier"
 version = "0.1.0"
+authors = ["Nv7"]
 edition = "2021"
+description = "Command-line studying thing"
+license-file = "LICENSE"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
