@@ -11,7 +11,20 @@ pub fn ask(q: &Question) -> bool {
 
 fn ask_normal(q: &String, answer: &String) -> bool {
   progress();
-  true
+  println!("{}\n", cmd::primary(q));
+  eprint!("{}", cmd::secondary(&"Answer: ".to_string()));
+  let v = cmd::input();
+  if v.to_lowercase() == answer.to_lowercase() {
+    return true;
+  }
+
+  // Wrong
+  progress();
+  println!("{}\n", cmd::primary(q));
+  println!("{}{}", cmd::correct(&"Correct Answer: ".to_string()), answer);
+  eprint!("{}", cmd::wrong(&"Typo? [y/n]: ".to_string()));
+
+  cmd::input() == "y"
 }
 
 fn ask_multiple(q: &String, answers: &Vec<String>) -> bool {

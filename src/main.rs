@@ -58,7 +58,7 @@ fn main() {
                     *val = true;
                     done_cnt += 1;
                     unsafe {
-                        PROGRESS_VAL = done_cnt as f32 / qs.len() as f32;
+                        PROGRESS_VAL = done_cnt as f32 / qs.len() as f32 * 100.0;
                     }
                 }
             }
