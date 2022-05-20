@@ -1,15 +1,17 @@
 use std::error::{Error};
 use thiserror::Error;
 use std::collections::HashSet;
+use enum_as_inner::EnumAsInner;
 
+#[derive(EnumAsInner)]
 pub enum QuestionText {
   Text(String),
   Blank(String),
 }
 
 pub struct BlankAnswer {
-  text: String,
-  answer: String,
+  pub text: String,
+  pub answer: String,
 }
 
 pub enum QuestionAnswer {
@@ -19,8 +21,8 @@ pub enum QuestionAnswer {
 }
 
 pub struct Question {
-  text: Vec<QuestionText>,
-  answer: QuestionAnswer,
+  pub text: Vec<QuestionText>,
+  pub answer: QuestionAnswer,
 }
 
 #[derive(Debug, Error)]
@@ -35,40 +37,40 @@ enum ParseError {
 
 pub fn parse(q: &String, answers: &Vec<String>) -> Result<Question, impl Error> {
   let mut curr = String::new();
-  let mut isBlank = false;
-  let mut hasBlank = false;
+  let mut is_blank = false;
+  let mut has_blank = false;
   let mut text: Vec<QuestionText> = Vec::new();
 
   for c in q.chars() {
     match c {
       '`' => {
-        if isBlank {
+        if is_blank {
           text.push(QuestionText::Blank(curr.clone()))
         } else {
           text.push(QuestionText::Text(curr.clone()))
         }
         curr = String::new();
-        isBlank = !isBlank;
-        hasBlank = true;
+        is_blank = !is_blank;
+        has_blank = true;
       }
       _ => curr.push(c)
     }
   }
 
   if curr != "" {
-    if isBlank {
+    if is_blank {
       text.push(QuestionText::Blank(curr.clone()))
     } else {
       text.push(QuestionText::Text(curr.clone()))
     }
   }
 
-  if isBlank {
+  if is_blank {
     return Err(ParseError::UnClosedBlank(q.clone()))
   }
 
   // Parse answers
-  if hasBlank {
+  if has_blank {
     // Calculate has
     let mut blanks: Vec<BlankAnswer> = Vec::with_capacity(answers.len());
     let mut has = HashSet::new();

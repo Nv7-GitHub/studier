@@ -1,7 +1,7 @@
 use std::{fmt, process::exit};
 
 pub fn clear() {
-  print!("\x1b[H\x1b[2J");
+  eprint!("\x1b[H\x1b[2J");
 }
 
 pub fn wrong(txt: &String) -> String {

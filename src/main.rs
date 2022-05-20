@@ -1,5 +1,6 @@
 mod cmd;
 mod parse;
+mod ask;
 use std::{error, fs};
 
 fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error>> {
@@ -29,12 +30,12 @@ fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error
     Ok(qs)
 }
 
-static mut progressVal: f32 = 0.0;
+static mut PROGRESS_VAL: f32 = 0.0;
 
 fn progress() {
     cmd::clear();
     unsafe {
-        println!("{:.2}%\n", progressVal);
+        println!("{:.2}%\n", PROGRESS_VAL);
     }
 }
 
@@ -46,4 +47,24 @@ fn main() {
         Ok(v) => v,
     };
     cmd::clear();
+
+    // Ask
+    let mut done_cnt = 0;
+    let mut finished = vec![false; qs.len()];
+    while done_cnt < finished.len() {
+        for (i, val) in finished.iter_mut().enumerate() {
+            if !*val {
+                if ask::ask(&qs[i]) {
+                    *val = true;
+                    done_cnt += 1;
+                    unsafe {
+                        PROGRESS_VAL = done_cnt as f32 / qs.len() as f32;
+                    }
+                }
+            }
+        }
+    }
+
+    cmd::clear();
+    println!("{}", cmd::correct(&"Done!".to_string()));
 }
