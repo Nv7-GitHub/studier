@@ -1,10 +1,11 @@
 [package]
 name = "studier"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Nv7"]
 edition = "2021"
 description = "Command-line studying thing"
 license = "MIT"
+repository = "https://github.com/Nv7-Github/studier"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
