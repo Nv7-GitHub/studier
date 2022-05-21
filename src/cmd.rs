@@ -1,4 +1,4 @@
-use std::{fmt, process::exit};
+use std::process::exit;
 
 pub fn clear() {
   eprint!("\x1b[H\x1b[2J");

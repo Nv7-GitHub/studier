@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use super::parse::*;
 use super::*;
 
@@ -22,7 +24,7 @@ fn ask_normal(q: &String, answer: &String) -> bool {
   progress();
   println!("{}\n", cmd::primary(q));
   println!("{}{}", cmd::correct(&"Correct Answer: ".to_string()), answer);
-  eprint!("{}", cmd::wrong(&"Typo? [y/n]: ".to_string()));
+  eprint!("\n{} ", cmd::wrong(&"Typo? [y/n]:".to_string()));
 
   cmd::input() == "y"
 }
@@ -46,7 +48,7 @@ fn ask_multiple(q: &String, answers: &Vec<String>) -> bool {
     let inp = cmd::input();
     let mut ind = -1;
     for (i, val) in answers.iter().enumerate() {
-      if val.to_lowercase() == inp {
+      if val.to_lowercase() == inp.to_lowercase() {
         ind = i as i32;
         break;
       }
@@ -72,7 +74,45 @@ fn ask_multiple(q: &String, answers: &Vec<String>) -> bool {
   true
 }
 
+fn print_blanks_text(q: &Vec<QuestionText>, ans: &HashMap<String, String>) {
+  for val in q {
+    match val {
+      parse::QuestionText::Text(txt) => print!("{}", cmd::primary(txt)),
+      parse::QuestionText::Blank(txt) => {
+        if ans.contains_key(txt) {
+          print!("{}", cmd::ternary(ans.get(txt).unwrap()));
+        } else {
+          print!("{}", cmd::ternary(txt));
+        }
+      },
+    }
+  }
+  println!("");
+}
+
 fn ask_blanks(q: &Vec<QuestionText>, answers: &Vec<BlankAnswer>) -> bool {
-  progress();
+  let mut ans = HashMap::new();
+  let mut ind = 0;
+  while ans.len() < answers.len() {
+    progress();
+    print_blanks_text(q, &ans);
+    let v = &answers[ind];
+    eprint!("\n{} ", cmd::secondary(&format!("{}:", v.text)));
+
+    // Input
+    let inp = cmd::input();
+    if inp.to_lowercase() != v.answer.to_lowercase() {
+      progress();
+      print_blanks_text(q, &ans);
+      println!("\n{} {}", cmd::correct(&"Correct Answer:".to_string()), v.answer);
+      println!("{} {}", cmd::wrong(&"Your Answer:".to_string()), inp);
+      eprint!("\n{} ", cmd::secondary(&"Typo? [y/n]:".to_string()));
+      if cmd::input() != "y" {
+        return false;
+      }
+    }
+    ans.insert(v.text.clone(), inp);
+    ind += 1;
+  }
   true
 }

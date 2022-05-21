@@ -1,7 +1,11 @@
+#[macro_use]
+extern crate lazy_static;
+
 mod cmd;
 mod parse;
 mod ask;
 use std::{error, fs};
+use std::sync::Mutex;
 
 fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error>> {
     cmd::clear();
@@ -30,13 +34,13 @@ fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error
     Ok(qs)
 }
 
-static mut PROGRESS_VAL: f32 = 0.0;
+lazy_static! {
+    static ref PROGRESS_VAL: Mutex<f32> = Mutex::new(0.0);
+}
 
 fn progress() {
     cmd::clear();
-    unsafe {
-        println!("{:.2}%\n", PROGRESS_VAL);
-    }
+    println!("{:.2}%\n", PROGRESS_VAL.lock().unwrap());
 }
 
 fn main() {
@@ -57,9 +61,7 @@ fn main() {
                 if ask::ask(&qs[i]) {
                     *val = true;
                     done_cnt += 1;
-                    unsafe {
-                        PROGRESS_VAL = done_cnt as f32 / qs.len() as f32 * 100.0;
-                    }
+                    *PROGRESS_VAL.lock().unwrap() = done_cnt as f32 / qs.len() as f32 * 100.0;
                 }
             }
         }
