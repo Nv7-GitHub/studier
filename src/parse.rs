@@ -33,6 +33,8 @@ enum ParseError {
   MissingBlankValue(String, String),
   #[error("unneded blank value: {1} for question {0}")]
   UnneededBlankValue(String, String),
+  #[error("improper blank for question {0}")]
+  ImproperBlank(String),
 }
 
 pub fn parse(q: &String, answers: &Vec<String>) -> Result<Question, impl Error> {
@@ -76,6 +78,9 @@ pub fn parse(q: &String, answers: &Vec<String>) -> Result<Question, impl Error> 
     let mut has = HashSet::new();
     for val in answers {
       let parts: Vec<_> = val.splitn(2, ": ").collect();
+      if parts.len() < 2 {
+        return Err(ParseError::ImproperBlank(q.clone()));
+      }
       has.insert(parts[0].to_string());
       blanks.push(BlankAnswer{text: parts[0].to_string(), answer: parts[1].to_string()});
     }
