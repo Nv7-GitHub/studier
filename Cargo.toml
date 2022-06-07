@@ -1,6 +1,6 @@
 [package]
 name = "studier"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Nv7"]
 edition = "2021"
 description = "Command-line studying thing"
