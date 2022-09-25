@@ -1,0 +1,131 @@
+traer
+traje
+
+traducir
+traduje
+
+hacer
+hice
+
+ser
+fui
+
+poner
+puse
+
+tener
+tuve
+
+estar
+estuve
+
+querer
+quise
+
+poder
+pude
+
+competir
+compite
+
+dormir (ellos)
+durmieron
+
+decir
+dije
+
+saber
+supe
+
+ir
+fui
+
+contruir (el/ellos irreg. only)
+construyo
+
+mentir (el/ellos irreg. only)
+mintieron
+
+leer (el/ellos irreg. only)
+leyeron
+
+oír (el/ellos irreg. only)
+oyeron
+
+sentir (el/ellos irreg. only)
+sintieron
+
+servir (el/ellos irreg. only)
+sirvieron
+
+repetir (el/ellos irreg. only)
+repitieron
+
+-zar (yo form)
+ce
+
+-gar (yo form)
+gue
+
+-car (yo form) - in answer replace é with e 
+que
+
+define decir
+to say
+
+define estar
+to be
+
+define traer
+to bring
+
+define hacer
+to do
+
+define dormir
+to sleep
+
+define construir
+to build
+
+define mentir
+to lie
+
+define buscar
+to seek
+
+define apagar
+to turn off
+
+define alcanzar
+to reach
+
+define leer
+to read
+
+define jugar
+to play
+
+define oír
+to hear
+
+define sentir
+to feel
+
+define servir
+to serve
+
+define repetir
+to repeat
+
+define competir
+to compete
+
+define almorzar
+to eat lunch
+
+define comenzar
+to begin
+
+define conducir
+to drive

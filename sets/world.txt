@@ -1,0 +1,3 @@
+include
+world/mongols.txt
+word/eastasia.txt

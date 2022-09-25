@@ -15,4 +15,4 @@ Cargo.lock
 /target
 
 # Test data
-*.txt
+#*.txt
