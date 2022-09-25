@@ -7,7 +7,7 @@ Tang
 What did Song Dynasty end by?
 mongols
 
-Anyone (poor or rich) could enter bureacracy through `exam` which was `system`
+Anyone (poor or rich) could enter bureacracy through `exam` which was `system`, created to balance military & scholars
 exam: Civil Service Exam
 system: meritocracy
 
@@ -26,6 +26,10 @@ Vietnam
 `metal` was made by China using `material` they discovered
 metal: steel
 material: coal
+
+Chinese invent `explosive`, use for `type` warfare
+explosive: gunpowder
+type: Siege
 
 China experienced `industrialization kind` - Where rural people make more goods than their community needs
 industrialization kind: proto-industrialization
@@ -73,6 +77,14 @@ thing: filial piety
 type: Zen
 type2: Chan
 religion: Daoism
+
+Chinese used special kilns to make `good`, desired all over the world for beauty & strength
+good: Porcelain
+
+The Chinese added whats to ships/navigation?
+rudder
+compass
+compartments
 
 Neo-Confucianism: Emphasized `thing` over God/nature
 thing: ethics

@@ -1,3 +1,4 @@
 include
 world/mongols.txt
-word/eastasia.txt
+world/eastasia.txt
+world/silkroad.txt
