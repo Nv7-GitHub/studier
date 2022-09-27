@@ -1,0 +1,18 @@
+alpha emission particle?
+helium nucleus
+
+beta decay?
+neutron becomes proton and electron
+
+gamma ray?
+electromagnetic energy
+
+positron emission?
+proton releases positron and becomes neutron
+
+electron capture?
+proton combines with electron and becomes neutron
+
+fission `action` fusion `action2`
+action: splits
+action2: joins
