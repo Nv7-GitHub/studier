@@ -2,3 +2,4 @@ include
 world/mongols.txt
 world/eastasia.txt
 world/silkroad.txt
+world/daralislam.txt
