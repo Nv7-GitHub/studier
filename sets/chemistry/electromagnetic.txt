@@ -1,0 +1,38 @@
+Wavelength of light: larger = (energy)
+lower
+
+Unit of measuring Frequency
+Hertzs
+
+Frequency of light: larger = (energy)
+higher
+
+Experiment that shows wave description of light
+double slit
+
+Energy is made of packets called `name`
+name: quanta
+
+Red has `adj` energy, purple has `adj2` energy
+adj: less
+adj2: more
+
+Lowest energy state of atom?
+ground state
+
+Higher energy state of atom?
+excited state
+
+When atoms go into higher energy state they `action`, makes `type` spectrum
+action: absorb light
+type: absorbtion
+
+When atoms go into lower energy state (which they do after going into higher energy state) they `action`, makes `type` spectrum
+action: emit light
+type: emission
+
+Theory of light?
+particle-wave duality
+
+Heisenberg uncertainty principle?
+can't know speed and position
