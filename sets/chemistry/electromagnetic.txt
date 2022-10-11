@@ -2,7 +2,7 @@ Wavelength of light: larger = (energy)
 lower
 
 Unit of measuring Frequency
-Hertzs
+Hertz
 
 Frequency of light: larger = (energy)
 higher

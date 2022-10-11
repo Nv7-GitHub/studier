@@ -1,0 +1,3 @@
+include
+chemistry/nuclear.txt
+chemistry/electromagnetic.txt
