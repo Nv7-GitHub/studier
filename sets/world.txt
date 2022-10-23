@@ -6,3 +6,4 @@ world/daralislam.txt
 world/transaharan.txt
 world/africa.txt
 world/southsoutheastasia.txt
+world/americas.txt
