@@ -7,6 +7,9 @@ Chola
 South India next state?
 Vijayanagara
 
+Vijayanagara religion (no transition)?
+Hinduism
+
 North India controlled by?
 Delhi Sultanate
 
@@ -35,8 +38,29 @@ Srivijaya Empire was in `place`, with religion `religion`
 place: Sumatra
 religion: Hinduism
 
-Southeast Asia transitioned to which religion?
+Khmer transitioned to which religion (from Hinduism, integrated)?
 Buddhism
 
 What brought Khmer prosperity?
 irrigation
+
+Thai (laos, cambodia too) kingdom?
+Sukhotai
+
+Sukhotai formed from which kingdom?
+Khmer
+
+Dynasty in Sri Lanka?
+Sinhala
+
+Sinhala religion (for the whole time), deeply part of?
+Buddhism
+
+Srivijaya died because?
+no trade
+
+Other trading empire in Indonesia (same fate as Srivijaya)
+Majapahit
+
+Srivijaya & Majapahit are thalassocracy, meaning?
+maritime power
