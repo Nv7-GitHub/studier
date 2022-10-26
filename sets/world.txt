@@ -7,3 +7,4 @@ world/transaharan.txt
 world/africa.txt
 world/southsoutheastasia.txt
 world/americas.txt
+world/europe.txt
