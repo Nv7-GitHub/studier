@@ -78,3 +78,7 @@ Humanism
 
 Russia had `type` christianity instead of Roman Catholicism, led them to be separate (in addition to Mongols)
 type: orthodox
+
+Black plague led to `thing` instead of serfdom because lack of peasants brought `thing2` for them
+thing: rent
+thing2: bargaining power
