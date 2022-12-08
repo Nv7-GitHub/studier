@@ -1,3 +1,6 @@
+People went exploring because of what laws?
+primogeniture
+
 `name`: Device that helps sailors go in correct direction, invented in `place`
 name: Magnetic Compass
 place: China
@@ -20,3 +23,7 @@ group: Islam
 
 Field that improved, allowing sailors to figure out where they were better
 Cartography
+
+`name`: Light type of boat invented by `place`
+name: caravel
+place: Portugal
