@@ -24,6 +24,10 @@ group: Islam
 Field that improved, allowing sailors to figure out where they were better
 Cartography
 
+`name`: Thing that helped Europeans conquered, invented in `place`
+name: Gunpowder
+place: China
+
 `name`: Light type of boat invented by `place`
 name: caravel
 place: Portugal
