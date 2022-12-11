@@ -71,7 +71,7 @@ la máscara
 mask
 
 el monstruo
-monter
+monster
 
 la luna
 moon
@@ -104,7 +104,7 @@ la calabaza
 pumpkin
 
 la rata
-rata
+rat
 
 el espantapájaros
 scarecrow
@@ -118,8 +118,8 @@ skeleton
 la calavera
 skull
 
-snake
 la serpiente
+snake
 
 la araña
 spider
