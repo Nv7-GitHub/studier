@@ -31,7 +31,7 @@ Ottoman devshirme: young `religion` boys are given `thing` and integrated into `
 religion: Christian
 thing: education
 group: military
-group2: religion
+group2: bureaucracy
 
 Elite devshirme group to protect king
 Jannisaries

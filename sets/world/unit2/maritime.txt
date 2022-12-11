@@ -8,13 +8,13 @@ group: middle class
 Successful joint-stock company and trade middlemen
 Dutch
 
-Triangle trade segments: `1` (`1 product`), `2` (`2 product`), `3` (`3 products)
+Triangle trade segments: `1` (bring `1 product`), `2` (bring `2 product`), `3` (bring `3 products`)
 1: West Africa
 1 product: firearms
 2: Americas
 2 product: slaves
 3: Europe
-3 product: sugar and tobacco
+3 products: sugar and tobacco
 
 What group destroyed Songhai with firearms?
 morocco
