@@ -12,7 +12,7 @@ fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error
     println!("Parsing {}...", cmd::correct(filename));
 
     // Read
-    let cont = fs::read_to_string(filename)?;
+    let cont = fs::read_to_string(filename)?.replace("\r", ""); // Handle windows
     let qvals: Vec<_> = cont.split("\n\n").collect();
     let mut qs: Vec<parse::Question> = Vec::with_capacity(qvals.len());
      
