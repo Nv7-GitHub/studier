@@ -14,3 +14,4 @@ chemistry/nuclear.txt
 chemistry/electromagnetic.txt
 chemistry/electronconfig.txt
 chemistry/periodictable.txt
+chemistry/bonding.txt
