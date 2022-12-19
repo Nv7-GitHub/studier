@@ -1,3 +1,6 @@
+Bohr model has electrons doing what around nucleuis?
+orbiting
+
 Wavelength of light: larger = (energy)
 lower
 
@@ -6,6 +9,27 @@ Hertz
 
 Frequency of light: larger = (energy)
 higher
+
+Meaning of λ
+wavelength
+
+Meaning of v with a line on it
+Frequency
+
+Meaning of c
+speed of light
+
+λ is equal to what
+c/v
+
+Meaning of h
+planck's constant
+
+Meaning of E
+energy
+
+E is equal to what
+hv
 
 Experiment that shows wave description of light
 double slit
@@ -33,6 +57,3 @@ type: emission
 
 Theory of light?
 particle-wave duality
-
-Heisenberg uncertainty principle?
-can't know speed and position

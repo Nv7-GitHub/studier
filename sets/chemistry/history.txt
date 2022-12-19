@@ -38,8 +38,9 @@ experiment: oil drop
 Thompson came up with `name` model of atom, because atoms are neutral but electrons are negative, so atom must have positive
 name: plum pudding
 
-Ernest Rutherford found out that elements have a dense nucleus and lots of empty space in `experiment` experiment.
+Ernest Rutherford found out that elements have a dense nucleus and lots of empty space in `experiment` experiment by shooting `thing` at gold foil.
 experiment: gold foil
+thing: alpha particles
 
 Dmitri Mendeleev made first modern periodic table, but sorted by `thing`, used it to predict elements
 thing: mass
@@ -64,3 +65,26 @@ mass number
 
 Bottom number in isotopic notation?
 atomic number
+
+proton relative mass
+1
+
+electron relative mass
+0
+
+neutron relative mass
+1
+
+proton charge unit
++1
+
+electron charge unit
+-1
+
+neutron charge unit 0
+
+what mass spectrometer uses to seperate beam of atoms
+magnet
+
+spectrometer produces bar graph of what?
+isotopes
