@@ -7,6 +7,9 @@ traduje
 hacer
 hice
 
+hacer el ella
+hizo
+
 ser
 fui
 
@@ -129,3 +132,27 @@ to begin
 
 define conducir
 to drive
+
+define levantarse
+get out of bed
+
+define lavarse
+to wash
+
+I brush my teeth in spanish
+me lavo los dientes
+
+define bañarse
+to bath
+
+define peinarse
+to comb
+
+define vestirse
+to dress
+
+define almuerzar
+to eat lunch
+
+hacer yo present
+hago
