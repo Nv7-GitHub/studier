@@ -154,5 +154,53 @@ to dress
 define almuerzar
 to eat lunch
 
+define venir
+to come
+
+define despertarse
+to wake up
+
+define salir
+to leave
+
+define desayunar
+to eat breakfast
+
+define cenar
+to eat dinner
+
+define acostarse
+get in bed
+
+acostarse yo present
+me acuesto
+
+dormir yo present
+duermo
+
 hacer yo present
 hago
+
+querer yo future (same for other conjugations)
+querré
+
+hacer yo future (same for other conjugations)
+haré
+
+decir yo future (same for other conjugations)
+diré
+
+tener yo future (same for other conjugations)
+tendré
+
+saber yo future (same for other conjugations)
+sabré
+
+poner yo future (same for other conjugations)
+pondré
+
+poder yo future (same for other conjugations)
+podré
+
+salir yo future (same for other conjugations)
+saldré

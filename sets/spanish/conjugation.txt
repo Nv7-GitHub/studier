@@ -84,3 +84,54 @@ Nosotros
 
 Ustedes ellos ellas reflexive
 se
+
+Yo ar er ir present
+o
+
+Tú ar present
+as
+
+Tú er ir present
+es
+
+El ella usted ar present
+a
+
+El ella usted er ir present
+e
+
+Nosotros ar present
+amos
+
+Nosotros er present
+emos
+
+Nostros ir present
+imos
+
+Ellos ellas ustedes ar present
+an
+
+Ellos ellas ustedes er ir present
+en
+
+Yo future
+aré
+
+Tú future
+arás
+
+El ella usted future
+ará
+
+Nosotros future
+aramos
+
+Ellos ustedes future
+arán
+
+Make aré er
+eré
+
+Make arás ir
+irás
