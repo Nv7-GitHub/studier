@@ -22,7 +22,7 @@ cat
 el cementerio
 cemetery
 
-el ataíd
+el ataúd
 coffin
 
 el cadáver
