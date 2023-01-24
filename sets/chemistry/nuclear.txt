@@ -31,7 +31,6 @@ step2: 140_54_Xe
 Thing that absorbs neutrons in reactor
 control rod
 
-
 What stops alpha particle
 paper
 
