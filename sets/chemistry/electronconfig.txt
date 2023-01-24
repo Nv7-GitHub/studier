@@ -37,7 +37,7 @@ shells
 subshells
 orbitals
 
-Electrons that can fit in an orbital?
+Number of electrons that can fit in an orbital?
 2
 
 Number of orbitals in S subshell
