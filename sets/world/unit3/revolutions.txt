@@ -36,7 +36,7 @@ group: Jacobins
 name: Reign of Terror
 
 Reign of Terror ended by `person`
-Napoleon
+person: Napoleon
 
 Haitian revolution inspired by
 enlightenment ideas
