@@ -21,7 +21,7 @@ act: Indian Removal Act
 thing: Ghost dance
 
 Túpac `name`: Descendant of Inca rulers, executed colonial leader and started last widespread native rebellion
-Amaru II
+name: Amaru II
 
 `person` overthrew Mexican liberal govt. for 3 years to support imperialism and get money
 person: Napoleon
