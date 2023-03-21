@@ -39,16 +39,11 @@ colonies
 Conference to bring peace after WWI
 paris peace Conference
 
-Leaders of peace conference called `name`, `leader 1` (`country 1`), `leader 2` (`country 2`), `leader 3` (`country 3`), `leader 4` (`country 4`)
-name: Big Four
-leader 1: Woodrow Wilson
-country 1: United States
-leader 2: David George
-country 2: Great Britain
-leader 3: Georges Clemeneu
-country 3: France
-leader 4: Vittorio Orlando
-country 4: Italy
+Big four countries in paris peace conference
+usa
+France
+Britain
+italy
 
 Wilson wanted
 less change
