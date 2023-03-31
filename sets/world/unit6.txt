@@ -1,6 +1,6 @@
 include
 unit6/stage.txt
-unit6/.txt
+unit6/coldwar.txt
 unit6/.txt
 unit6/.txt
 unit6/.txt
