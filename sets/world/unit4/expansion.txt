@@ -5,7 +5,7 @@ Major infrastructure in Africa
 Suez canal
 
 Corvée labor: `type of pay` workers who worked as `thing`
-type of pay: unpain
+type of pay: unpaid
 thing: taxation
 
 First large African colony
