@@ -1,11 +1,13 @@
 #[macro_use]
 extern crate lazy_static;
 
+mod ask;
 mod cmd;
 mod parse;
-mod ask;
-use std::{error, fs};
+use std::fs::File;
+use std::io::Write;
 use std::sync::Mutex;
+use std::{error, fs};
 
 fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error>> {
     cmd::clear();
@@ -15,7 +17,7 @@ fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error
     let cont = fs::read_to_string(filename)?.replace("\r", ""); // Handle windows
     let qvals: Vec<_> = cont.split("\n\n").collect();
     let mut qs: Vec<parse::Question> = Vec::with_capacity(qvals.len());
-     
+
     // Go through
     for q in qvals {
         let mut lines = q.split("\n");
@@ -24,6 +26,12 @@ fn parse(filename: &String) -> Result<Vec<parse::Question>, Box<dyn error::Error
             for val in lines {
                 let mut vals = parse(&val.to_string())?;
                 qs.append(&mut vals);
+            }
+        } else if question == "save" {
+            // Convert to text
+            let mut file = File::create(lines.next().unwrap())?;
+            for q in qs.iter() {
+                write!(file, "{}\n", q.rawtext())?;
             }
         } else {
             let lines = lines.map(|s| s.to_string()).collect();
