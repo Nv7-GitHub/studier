@@ -38,7 +38,7 @@ When did Jamestown come under the crown
 When did William Berkely (Virginia gov.) crush Native American uprising and establish boundary
 1644
 
-Whay did Berkely do to Virginia govt.
+What did Berkely do to Virginia govt.
 keep same people
 
 Why did West people resent Berkely
@@ -100,7 +100,7 @@ Bradford
 What did all colony leaders have to get
 charter
 
-Who created Massachusetts bay company and brought charter to American
+Who created Massachusetts bay company and brought charter to America
 John Winthrop
 
 What did Winthrop create ("city upon hill")
@@ -208,7 +208,7 @@ English navigation acts (1660): `1`, `2`, `3`
 2: english tax europe trade
 3: customs officials
 
-What did English make to increase colonial presence (combine Masachusetts & w, absolute rule)
+What did English make to increase colonial presence (combine Masachusetts & others, absolute rule)
 dominion of new england
 
 Why was James II kicked out in Glorius revolution
