@@ -54,6 +54,9 @@ Stono rebellion
 Written agreement within all members of town in New England
 covenant
 
+People that townsfolk agreed upon to be leaders (already granted Heaven)
+visible saints
+
 Why did salem witchcraft trials occur? (general new england problem)
 high tension over religion
 
