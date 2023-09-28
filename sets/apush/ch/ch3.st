@@ -78,6 +78,7 @@ When was great awakening climax
 
 Major leader of Great awakening
 jonathan edwards
+george whitefield
 
 How was literacy for white men in America (high)
 half
