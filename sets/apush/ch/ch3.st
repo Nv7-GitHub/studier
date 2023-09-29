@@ -113,3 +113,9 @@ trial by jury
 In trial of `person` Americans created `difference`, different from British law
 person: John Peter Zenger
 difference: free speech
+
+Act that prevents colonies from making finished steel gods, but supports exporting raw iron
+Iron act of 1750
+
+Non-slaveholding, poor family farmers in the South
+yeoman farmers
