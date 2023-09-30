@@ -161,6 +161,12 @@ daughters of liberty
 Event where dissenters throw tea into the harbor (spread elsewhere too)
 Boston tea party
 
+British acts in retaliation to Boston tea party, greatly reduced power of Massachussetts government, quartering of troops, led other colonies to support Massachussetts
+Coercive acts
+
+Name for coervice acts in America
+intolerable acts
+
 Why did British send first soldiers
 confiscate gunpowder
 
