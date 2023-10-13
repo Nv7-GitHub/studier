@@ -73,3 +73,6 @@ republicans
 
 Revolution where Jefferson elected, makes government mostly republican (from federalist)
 revolution of 1800
+
+Act that made district courts, circuit courts, and supreme court and set up appeals
+judiciary act of 1789
