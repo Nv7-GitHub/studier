@@ -1,4 +1,3 @@
 include
-chapters/ch2.txt
-chapters/ch3.txt
-chapters/ch4.txt
+ch/ch2.st
+ch/ch3.st
