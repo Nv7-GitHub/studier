@@ -55,13 +55,22 @@ Federalist
 Case where John Marshall supports contracts even if they are shady, strengthening economy
 Fletcher v. Peck
 
+Case in which Dartmouth is protected from becoming state owned because of its charter
+Dartmouth v. Woodward
+
+Case in which Marshall confirms federal review of state court decisions
+Cohens v. Virginia
+
 Case where John Marshall supports national bank
 McCulloch v. Maryland
 
 Case where John Marshall gives congress power to regulate state commerce
 Gibbons v. Ogden
 
-Case where John Marshall gives US power to make treaties with Natives and states can't interfere
+Case where Marshall gives US power to claim treaties with native americans over states
+Johnson v. McIntosh
+
+Case where John Marshall gives only US power to regulate who can go in Native American territory
 Worcester v. Georgia
 
 When Spanish colonies revolt, America gives them power with what
