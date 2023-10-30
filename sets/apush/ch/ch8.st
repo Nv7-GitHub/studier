@@ -4,7 +4,13 @@ second national bank
 What increases during war of 1812 because cut off from trade
 manufacturing
 
-Person that vetoes building roads without amendment
+Tariff to protect new manufacturing after end of war of 1812
+Tariff of 1816
+
+1828 Tariff called what because it protected North but hurt South
+Tariff of Abominations
+
+Person that vetoes building roads (Internal Improvements) without amendment
 madison
 
 Why do people go west
@@ -15,6 +21,9 @@ sell for profit
 
 Where did wealthy planters go
 cleared parts of old southwest
+
+What was system where settlers sell farms for profit to wealthy plantaters
+plantation system
 
 Area where cotton grows well due to dark soil
 black belt
@@ -89,3 +98,6 @@ American System
 
 When jackson was elected after Adams what did they call it
 era of the common man
+
+Person that defended national bank
+daniel webster
