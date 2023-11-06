@@ -90,6 +90,9 @@ Van Buren
 Why did Whigs fail even though they had a good amount of support
 no single leader
 
+Act where government gives surplus money to states
+Distribution act
+
 When economic boom of 1836 makes government give out lots of money, what law do they enact to require currencies backed by gold and silver to be repaid
 specie circular
 
