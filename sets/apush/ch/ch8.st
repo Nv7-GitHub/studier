@@ -34,11 +34,11 @@ white trappers
 When Jefferson gets his secretary of state elected, who is next president
 James Monroe
 
-Who does Jefferson make his secretary of state
+Who does Monroe make his secretary of state
 John Quincy Adams
 
 After Monroe is elected what starts, ending Federalist party
-era of goody feelings
+era of good feelings
 
 When Calhoun (secretary of war) tells Andrew Jackson to stop Seminole raids, what does he starts
 Seminole wars
