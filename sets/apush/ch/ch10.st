@@ -47,4 +47,67 @@ newspapers
 New business organization that took over large businesses
 corporation
 
-Stop at page 232
+Primary job in Northeast
+factory system
+
+Idea that revolutionized manufacturing
+interchangeable tools
+
+Major american inventor products
+goodyear
+howe-singer
+
+Elite group in Northeast that financed early factories
+merchant capitalists
+
+System where young women are recruited for factory, payed well, and after a few years they go and start families
+Lowell system
+Waltham system
+
+In what year do factories start switching from women to lower-payed Irish immigrants
+1840
+
+Union between skilled artisans to keep their businesses
+National Trades' Union
+
+Court case where unions & strikes made legal
+Commonwealth v. Hunt
+
+Homeless people in cities called
+paupers
+
+Thing that helped minimize discontent between very unequal social classes
+social mobility
+
+Another mobility that was important in reducing discontent
+Geographic mobility
+
+Most influential and fastest growing class in America
+middle class
+
+Major home device for middle class in 1840s for cooking
+cast-iron stove
+
+Distinction between what two things emerged because of industrial revolution
+family
+work
+
+Idea where women only worry about fashion and homekeeping and get more material wealth but less intellectual wealth
+cult of domesticity
+
+Thing that emerged in cities because of the little free time industrial workers had
+public leisure
+
+Person who made very successful freak shows
+P.T. Barnum
+
+Place where farming primarily took Place
+midwest
+
+Inventions by john doe and mccormick in agricultural tools
+steel plow
+reaper
+thresher
+
+Thing that drew together and dominated farm communities
+religion
