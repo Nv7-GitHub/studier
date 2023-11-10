@@ -13,7 +13,10 @@ After when did immigration from Ireland start (before very little immigration)
 Time with huge immigration, population growth, and rapidly expanding cities
 1840-1860
 
-Group that fears immigrants and tries to remove catholics from government
+Idea where immigrants are worse than native-born Americans
+nativism
+
+Group that fears immigrants and tries to remove catholics from government (originally Order of the Star-Spangled Banner)
 know-nothings
 
 Where did the Know-Nothings (now political party) win control
