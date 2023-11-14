@@ -6,7 +6,7 @@ fatty acids
 
 Polar parts of phospholipid
 glycerol
-fatty acid
+phosphate group
 
 Type of molecule that diffuses quickly across membrane
 small Nonpolar
