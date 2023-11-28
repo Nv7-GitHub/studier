@@ -1,4 +1,4 @@
-FITT Principal for cardio: `F` (`f target`), `I` (`i target`), `T` (t target), `T2` (`t2 target`)
+FITT Principal for cardio: `F` (`f target`), `I` (`i target`), `T` (`t target`), `T2` (`t2 target`)
 F: Frequency
 f target: 3-5 per week
 I: Intensity
