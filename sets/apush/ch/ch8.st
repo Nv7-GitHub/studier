@@ -40,7 +40,7 @@ John Quincy Adams
 After Monroe is elected what starts, ending Federalist party
 era of good feelings
 
-When Calhoun (secretary of war) tells Andrew Jackson to stop Seminole raids, what does he starts
+When Calhoun (secretary of war) tells Andrew Jackson to stop Seminole raids, what does he start
 Seminole wars
 
 Treaty that Adams negotiates after showing power through raids in Seminole wars, gets all of Florida from Spain

@@ -70,7 +70,7 @@ Louisiana purchase
 Expedition Jefferson makes to understand what is west of the US and what they got in the Louisiana purchase
 Lewis and Clark
 
-What does group of federalists called Essex Junto decide the need to not lose power after Louisiana Purchase makes more states
+What does group of federalists called Essex Junto decide they need to not lose power after Louisiana Purchase makes more states
 Secession
 
 When Aaron Burr supports secession in New York but Hamilton doesn't, what do they do

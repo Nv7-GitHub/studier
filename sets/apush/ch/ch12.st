@@ -23,7 +23,7 @@ Henry Thoreau
 What moral concept did transcendentalists believe in
 environmentalism
 
-Utopian community experiment in 1841-1847 with transcendentalists and everyone doing work  for each other
+Utopian community experiment in 1841-1847 with transcendentalists and everyone doing work for each other
 Brook Farm
 
 Person that wrote about Brook Farm
@@ -40,7 +40,7 @@ Utopian community where gender roles equal and celibacy
 Shakers
 
 Mormons founded by `person` who writes book of mormon and calls themselves latter-day saints in 1830
-Joseph Smith
+person: Joseph Smith
 
 Successor of Joseph Smith that brings 12000 mormons to a new land after Joseph dies in Illinois because of opposition
 Brigham Young
