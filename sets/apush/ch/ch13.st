@@ -135,3 +135,6 @@ Lincoln
 
 Process that began after Lincoln's election
 disunion
+
+Amendment that slavery can't be in territory ceded from Mexico
+Wilmot proviso
