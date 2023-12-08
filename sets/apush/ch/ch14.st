@@ -142,3 +142,6 @@ Gettysburg
 
 Thing where Johnson A. Sherman destroys Georgia on his march
 March to the sea
+
+Infantry in North made up of freed slaves (with white leader)
+54th Massachussetts Infantry
