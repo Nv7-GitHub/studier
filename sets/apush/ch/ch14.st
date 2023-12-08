@@ -145,3 +145,6 @@ March to the sea
 
 Infantry in North made up of freed slaves (with white leader)
 54th Massachussetts Infantry
+
+Person that was vice president for lincoln for second term, opposed Tennessee seceding
+Andrew Johnson
