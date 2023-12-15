@@ -65,3 +65,48 @@ chlorophyll A
 Accessor pigments (widen usable range of light)
 carotenoids
 chlorophyll B
+
+3 parts of ATP
+ribose
+adenine
+triphosphate
+
+Glycolysis takes place in `place`, inputs `input` ATP, outputs `output` ATP, outputs `output compound`
+place: Cytoplasm
+input: 2
+output: 4
+output compund: Pyruvate
+
+How much ATP does Fermentation make
+2
+
+What is loss of electrons
+oxidation
+
+What is gain of electrons
+reduction
+
+Possible results of Fermentation
+lactate
+ethanol
+
+Which result of fermentation is reversible in the presence of oxygen
+lactate
+
+Stages of cellular respiration: `1`, `2` - yields `2yield`, `3`, `4`, `other name of 4`
+1: Glycolysis
+2: Link
+2yield: Acetyl CoA
+3: Krebs cycle
+4: Electron transport chain
+other name of 4: oxidative phosphorylation
+
+What is it called when ATP is used to perform activities
+substrate level phosphorylation
+
+`a` C6H12O6 + `b` O2 -> `c` CO2 + `d` H2O + `e` ATP
+a: 1
+b: 6
+c: 6
+d: 6
+e: 32
