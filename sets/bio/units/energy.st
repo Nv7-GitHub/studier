@@ -77,7 +77,10 @@ input: 2
 output: 4
 output compund: Pyruvate
 
-How much ATP does Fermentation make
+How many turns of Krebs cycle happen per glucose
+2 
+
+How much ATP does Fermentation make (from glycolysis)
 2
 
 What is loss of electrons
@@ -93,6 +96,9 @@ ethanol
 Which result of fermentation is reversible in the presence of oxygen
 lactate
 
+Main output of Krebs cycle
+NADPH
+
 Stages of cellular respiration: `1`, `2` - yields `2yield`, `3`, `4`, `other name of 4`
 1: Glycolysis
 2: Link
@@ -100,6 +106,10 @@ Stages of cellular respiration: `1`, `2` - yields `2yield`, `3`, `4`, `other nam
 3: Krebs cycle
 4: Electron transport chain
 other name of 4: oxidative phosphorylation
+
+Electron transport chain takes `input` and releases lots of `output`
+input: NADPH
+output: ATP
 
 What is it called when ATP is used to perform activities
 substrate level phosphorylation
@@ -110,3 +120,33 @@ b: 6
 c: 6
 d: 6
 e: 32
+
+Three types of work of cell
+chemical
+mechanical
+transport
+
+`o` gets oxidized, `r` gets reduced
+o: fuel
+r: oxygen
+
+NADH-like thing produced by Krebs/Citric acid cycle
+FADH2
+
+What does electron transport chain do
+pump H+
+
+What is it called when H+ gradient used to do work
+chemiosmosis
+
+What type of phosphorylation happens during Glycolysis
+substrate-level
+
+Anaerobes that cannot survive in O2
+obligate
+
+Anaerobes that can use cellular respiration of fermentation when no oxygen
+facultative
+
+Earliest method of using chemical energy (before mitochondria)
+glycolysis
