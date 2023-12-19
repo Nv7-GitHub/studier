@@ -113,3 +113,18 @@ plasmolysis
 
 Thing that solutes go down
 concentration gradient
+
+Evidence that cells come from prokaryotes
+Plasmids
+Double membrane
+Divide
+Ribosomes
+
+Old idea in which living things like bacteria come from nonliving matter (e.g. rotting meat)
+spontaneous generation
+
+What came before cells
+vesicles
+
+Process in which cell engulfs mitochondria/plastids and they are mutually beneficial
+endosymbiosis
