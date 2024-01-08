@@ -100,3 +100,11 @@ plastids
 
 Organelle that produces hydrogen peroxide and turns it to water to do reactions (e.g. liver)
 peroxisomes
+
+Shapes of bacteria cell
+rod
+capsule
+sphere
+
+What do both eukaryotes and prokaryotes have
+ribosomes
