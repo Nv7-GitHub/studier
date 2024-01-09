@@ -108,3 +108,15 @@ sphere
 
 What do both eukaryotes and prokaryotes have
 ribosomes
+
+Type of ribosome in mitochondria/chloroplast/archaea
+70S
+
+Type of ribosome in eukaryote
+80S
+
+Lines in mitochondria
+cristae
+
+Pores in nuclear envelope
+nuclear pores
