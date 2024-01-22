@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"github.com/charmbracelet/bubbles/spinner"
+	tea "github.com/charmbracelet/bubbletea"
 )
 
 type ModelState int
@@ -11,13 +11,34 @@ const (
 	ModelStateFileInput ModelState = iota
 )
 
-// TODO: Better error handling
-func (m *Model) HandleErr(msg string) {
-	// Red
-	fmt.Println(ErrStyle.Render(msg))
-	os.Exit(1)
-}
-
 type Model struct {
 	State ModelState
+
+	ParseSpinner spinner.Model
+}
+
+func NewModel() *Model {
+	m := &Model{}
+	m.ParseSpinner = spinner.New()
+	m.ParseSpinner.Spinner = spinner.Dot
+
+	return m
+}
+
+func (m *Model) Init() tea.Cmd {
+
+}
+
+func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch m.State {
+	case ModelStateFileInput:
+		return m.InputParseState(msg)
+
+	default:
+		return m, nil
+	}
+}
+
+func (m *Model) View() string {
+	
 }

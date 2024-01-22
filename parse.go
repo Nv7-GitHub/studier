@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	tea "github.com/charmbracelet/bubbletea"
 )
 
 type QuestionTextKind int
@@ -101,4 +103,8 @@ func (m *Model) ParseQuestion(inp string, linenum int, file string) *Question {
 		Text:   text,
 		Answer: ans,
 	}
+}
+
+func (m *Model) InputParseState(msg tea.Msg) (tea.Model, tea.Cmd) {
+
 }
