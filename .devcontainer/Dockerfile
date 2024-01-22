@@ -1,9 +1,7 @@
 FROM ubuntu:18.04
 
-WORKDIR /home/
-
 COPY . .
 
-RUN bash ./setup.sh
-
-ENV PATH="/root/.cargo/bin:$PATH"
+ENV PATH "$PATH:/usr/local/go/bin:/home/user/go/bin:/home/user/.cargo/bin"
+RUN bash setup.sh
+USER user
