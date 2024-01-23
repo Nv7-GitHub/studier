@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"os"
+
+	tea "github.com/charmbracelet/bubbletea"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	m := NewModel()
+	tea.NewProgram(m, tea.WithOutput(os.Stderr)).Run()
 }
