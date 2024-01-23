@@ -126,9 +126,6 @@ func (m *Model) ParseFile(path string) ([]Question, tea.Cmd) {
 	// Read file
 	file, err := os.ReadFile(path)
 	if err != nil {
-		fmt.Println("GOT PATH ERROR: " + path)
-		fmt.Println(err)
-		os.Exit(1)
 		return nil, m.HandleErr(err)
 	}
 	qs := strings.SplitN(string(file), "\n\n", 2)
@@ -141,7 +138,7 @@ func (m *Model) ParseFile(path string) ([]Question, tea.Cmd) {
 			}
 			for _, v := range q[1:] {
 				path := filepath.Join(filepath.Dir(path), v)
-				vals, cmd := m.ParseFile(path)
+				vals, cmd := m.ParseFile(strings.TrimSpace(path))
 				if cmd != nil {
 					return nil, cmd
 				}
@@ -172,6 +169,8 @@ func (m *Model) InputParseState(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 
 		m.State = ModelStateQuiz
+		m.FileID = filepath.Base(path)
+		m.UpdateProgress()
 		return m, cmd
 	}
 	return m, cmd
