@@ -39,6 +39,7 @@ type Model struct {
 	MultipleAnswerProgress []string
 	BlankAnswers           map[string]string
 	BlankIndex             int
+	IncorrectAnswer        string
 }
 
 func NewModel() *Model {
@@ -99,6 +100,9 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case ModelStateQuiz:
 		return m.QuizStateUpdate(msg)
 
+	case ModelStateQuestionResult:
+		return m.ResultStateUpdate(msg)
+
 	default:
 		return m, nil
 	}
@@ -111,6 +115,9 @@ func (m *Model) View() string {
 
 	case ModelStateQuiz:
 		return m.QuizStateView()
+
+	case ModelStateQuestionResult:
+		return m.ResultStateView()
 
 	case ModelStateError:
 		return "" // Display error after

@@ -9,6 +9,7 @@ var ErrStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("9")).Bold(true)
 var CorrectStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("10")).Bold(true)
 var ListAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("31")).Bold(true)
 var QuestionStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("5"))
+var MessageStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("6"))
 var BlankStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("12")).Bold(true)
 
 func (m *Model) HandleErr(err error) tea.Cmd {

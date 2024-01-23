@@ -1,9 +1,7 @@
 package main
 
 import (
-	"encoding/json"
-	"errors"
-	"os"
+	"fmt"
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
@@ -18,6 +16,7 @@ func (m *Model) QuizStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
 	var ncmd tea.Cmd
 	m.QuestionViewport, ncmd = m.QuestionViewport.Update(msg)
 	cmd = tea.Batch(cmd, ncmd)
+
 	if k, ok := msg.(tea.KeyMsg); ok && k.Type == tea.KeyEnter {
 		ans := m.QuestionInput.Value()
 		m.QuestionInput.Reset()
@@ -26,9 +25,10 @@ func (m *Model) QuizStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch a := m.Questions[m.Question].Answer.(type) {
 		case QuestionAnswerSingle:
 			if CompareAnswer(ans, a.Answer) {
-				return m, tea.Batch(cmd, m.IncrQuestion())
+				return m, tea.Batch(cmd, m.IncrQuestion(true))
 			} else {
 				m.State = ModelStateQuestionResult
+				m.IncorrectAnswer = ans
 			}
 
 		case QuestionAnswerMultiple:
@@ -42,10 +42,11 @@ func (m *Model) QuizStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if cont {
 				m.MultipleAnswerProgress = append(m.MultipleAnswerProgress, ans)
 				if len(m.MultipleAnswerProgress) == len(a.Answers) {
-					return m, tea.Batch(cmd, m.IncrQuestion())
+					return m, tea.Batch(cmd, m.IncrQuestion(true))
 				}
 			} else {
 				m.State = ModelStateQuestionResult
+				m.IncorrectAnswer = ans
 			}
 
 		case QuestionAnswerBlanks:
@@ -53,66 +54,16 @@ func (m *Model) QuizStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.BlankAnswers[a.Order[m.BlankIndex]] = ans
 				m.BlankIndex++
 				if m.BlankIndex == len(a.Order) {
-					return m, tea.Batch(cmd, m.IncrQuestion())
+					return m, tea.Batch(cmd, m.IncrQuestion(true))
 				}
 			} else {
 				m.State = ModelStateQuestionResult
+				m.IncorrectAnswer = ans
 			}
 		}
 	}
 
 	return m, cmd
-}
-
-func (m *Model) IncrQuestion() tea.Cmd {
-	m.MultipleAnswerProgress = make([]string, 0)
-	m.BlankIndex = 0
-	m.BlankAnswers = make(map[string]string)
-	m.Finished[m.Question] = struct{}{}
-	cmd := m.QuestionProgress.SetPercent(float64(len(m.Finished)) / float64(len(m.Questions)))
-
-	if len(m.Finished) == len(m.Questions) {
-		m.State = ModelStateQuitting
-
-		// Reset progress
-		dat, err := os.ReadFile(ProgressFile)
-		if err != nil {
-			panic(err)
-		}
-		progress := make(map[string]map[int]struct{})
-		err = json.Unmarshal(dat, &progress)
-		if err != nil {
-			panic(err)
-		}
-		delete(progress, m.FileID)
-		dat, err = json.Marshal(progress)
-		if err != nil {
-			panic(err)
-		}
-		err = os.WriteFile(ProgressFile, dat, os.ModePerm)
-		if err != nil {
-			panic(err)
-		}
-
-		return tea.Quit
-	}
-
-	for i := m.Question + 1; i < len(m.Questions); i++ {
-		if _, exists := m.Finished[i]; !exists {
-			m.Question = i
-			m.UpdateProgress()
-			return cmd
-		}
-	}
-	// Have to start over
-	for i := 0; i < len(m.Questions); i++ {
-		if _, exists := m.Finished[i]; !exists {
-			m.Question = i
-			m.UpdateProgress()
-			return cmd
-		}
-	}
-	panic("couldn't find next question")
 }
 
 func (m *Model) RenderQuestion() string {
@@ -142,49 +93,74 @@ func (m *Model) QuizStateView() string {
 	return m.QuestionProgress.View() + "\n\n" + m.QuestionViewport.View()
 }
 
-func (m *Model) UpdateProgress() {
-	// Read progress
-	if _, err := os.Stat(ProgressFile); errors.Is(err, os.ErrNotExist) {
-		err := os.WriteFile(ProgressFile, []byte("{}"), os.ModePerm)
-		if err != nil {
-			panic(err)
-		}
-	}
-	dat, err := os.ReadFile(ProgressFile)
-	if err != nil {
-		panic(err)
-	}
-	progress := make(map[string]map[int]struct{})
-	err = json.Unmarshal(dat, &progress)
-	if err != nil {
-		panic(err)
-	}
+func (m *Model) ResultStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
+	var cmd tea.Cmd
+	m.QuestionInput, cmd = m.QuestionInput.Update(msg)
+	var ncmd tea.Cmd
+	m.QuestionViewport, ncmd = m.QuestionViewport.Update(msg)
+	cmd = tea.Batch(cmd, ncmd)
 
-	// Add progress
-	_, exists := progress[m.FileID]
-	if exists && len(m.Finished) < len(progress[m.FileID]) {
-		for v := range progress[m.FileID] {
-			m.Finished[v] = struct{}{}
-		}
-		_, exists := progress[m.FileID][m.Question]
-		if exists {
-			for i := m.Question; i < len(m.Questions); i++ {
-				if _, exists := progress[m.FileID][i]; !exists {
-					m.Question = i
-					break
+	if k, ok := msg.(tea.KeyMsg); ok && k.Type == tea.KeyEnter {
+		ans := m.QuestionInput.Value()
+		m.QuestionInput.Reset()
+
+		switch a := m.Questions[m.Question].Answer.(type) {
+		case QuestionAnswerSingle:
+			m.State = ModelStateQuiz
+			if strings.HasPrefix(strings.ToLower(ans), "y") {
+				return m, tea.Batch(cmd, m.IncrQuestion(true))
+			} else {
+				return m, tea.Batch(cmd, m.IncrQuestion(false))
+			}
+
+		case QuestionAnswerMultiple:
+			m.State = ModelStateQuiz
+			m.IncrQuestion(false)
+
+		case QuestionAnswerBlanks:
+			m.State = ModelStateQuiz
+			if strings.HasPrefix(strings.ToLower(ans), "y") {
+				m.BlankAnswers[a.Order[m.BlankIndex]] = a.Answers[a.Order[m.BlankIndex]]
+				m.BlankIndex++
+				if m.BlankIndex == len(a.Order) {
+					return m, tea.Batch(cmd, m.IncrQuestion(true))
 				}
+			} else {
+				return m, tea.Batch(cmd, m.IncrQuestion(false))
 			}
 		}
 	}
-	progress[m.FileID] = m.Finished
 
-	// Save
-	dat, err = json.Marshal(progress)
-	if err != nil {
-		panic(err)
+	return m, cmd
+}
+
+func (m *Model) ResultStateView() string {
+	cont := &strings.Builder{}
+	switch a := m.Questions[m.Question].Answer.(type) {
+	case QuestionAnswerSingle:
+		fmt.Fprintf(cont, "%s%s\n\n%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answer: "), a.Answer, MessageStyle.Render("Typo? [y/n]"))
+
+	case QuestionAnswerMultiple:
+		fmt.Fprintf(cont, "%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answers: "))
+		for _, v := range a.Answers {
+			alreadyfound := false
+			for _, w := range m.MultipleAnswerProgress {
+				if CompareAnswer(v, w) {
+					alreadyfound = true
+					break
+				}
+			}
+			if alreadyfound {
+				continue
+			}
+			fmt.Fprintf(cont, "%s\n", ListAnswerStyle.Render(v))
+		}
+		cont.WriteString(MessageStyle.Render("\nPress ENTER to continue..."))
+
+	case QuestionAnswerBlanks:
+		fmt.Fprintf(cont, "%s%s\n\n%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answer: "), a.Answers[a.Order[m.BlankIndex]], MessageStyle.Render("Typo? [y/n]"))
 	}
-	err = os.WriteFile(ProgressFile, dat, os.ModePerm)
-	if err != nil {
-		panic(err)
-	}
+
+	m.QuestionViewport.SetContent(m.RenderQuestion() + "\n\n" + m.QuestionInput.View() + "\n\n" + cont.String())
+	return m.QuestionProgress.View() + "\n\n" + m.QuestionViewport.View()
 }
