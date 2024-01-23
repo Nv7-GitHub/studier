@@ -83,6 +83,16 @@ func (m *Model) ParseQuestion(inp string, linenum int, file string) (*Question, 
 			curr = ""
 			inblank = !inblank
 			hasblank = true
+		case ' ':
+			if inblank {
+				curr += string(ch)
+			} else {
+				text = append(text, QuestionText{
+					Kind: QuestionTextKindText,
+					Value: curr + " ",
+				})
+				curr = ""
+			}
 		default:
 			curr += string(ch)
 		}

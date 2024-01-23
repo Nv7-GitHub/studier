@@ -5,7 +5,6 @@ import (
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/muesli/reflow/wordwrap"
 )
 
 const ProgressFile = "progress.json"
@@ -68,20 +67,36 @@ func (m *Model) QuizStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m *Model) RenderQuestion() string {
 	out := &strings.Builder{}
+	linelength := 0
 	for _, t := range m.Questions[m.Question].Text {
 		switch t.Kind {
 		case QuestionTextKindText:
+			if len(t.Value)+linelength > m.QuestionViewport.Width-4 {
+				out.WriteRune('\n')
+				linelength = 0
+			}
 			out.WriteString(QuestionStyle.Render(t.Value))
+			linelength += len(t.Value)
 
 		case QuestionTextKindBlank:
 			if _, exists := m.BlankAnswers[t.Value]; exists {
+				if len(m.BlankAnswers[t.Value])+linelength > m.QuestionViewport.Width-4 {
+					out.WriteRune('\n')
+					linelength = 0
+				}
 				out.WriteString(BlankStyle.Render(m.BlankAnswers[t.Value]))
+				linelength += len(m.BlankAnswers[t.Value])
 			} else {
+				if len(t.Value)+linelength > m.QuestionViewport.Width-4 {
+					out.WriteRune('\n')
+					linelength = 0
+				}
 				out.WriteString(BlankStyle.Render(t.Value))
+				linelength += len(t.Value)
 			}
 		}
 	}
-	return wordwrap.String(out.String(), m.QuestionViewport.Width-4)
+	return out.String()
 }
 
 func CompareAnswer(a string, b string) bool {
@@ -136,12 +151,13 @@ func (m *Model) ResultStateUpdate(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m *Model) ResultStateView() string {
 	cont := &strings.Builder{}
+	hasInput := true
 	switch a := m.Questions[m.Question].Answer.(type) {
 	case QuestionAnswerSingle:
 		fmt.Fprintf(cont, "%s%s\n\n%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answer: "), a.Answer, MessageStyle.Render("Typo? [y/n]"))
 
 	case QuestionAnswerMultiple:
-		fmt.Fprintf(cont, "%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answers: "))
+		fmt.Fprintf(cont, "%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answers: \n"))
 		for _, v := range a.Answers {
 			alreadyfound := false
 			for _, w := range m.MultipleAnswerProgress {
@@ -156,11 +172,16 @@ func (m *Model) ResultStateView() string {
 			fmt.Fprintf(cont, "%s\n", ListAnswerStyle.Render(v))
 		}
 		cont.WriteString(MessageStyle.Render("\nPress ENTER to continue..."))
+		hasInput = false
 
 	case QuestionAnswerBlanks:
 		fmt.Fprintf(cont, "%s%s\n\n%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answer: "), a.Answers[a.Order[m.BlankIndex]], MessageStyle.Render("Typo? [y/n]"))
 	}
 
-	m.QuestionViewport.SetContent(m.RenderQuestion() + "\n\n" + m.QuestionInput.View() + "\n\n" + cont.String())
+	if hasInput {
+		m.QuestionViewport.SetContent(m.RenderQuestion() + "\n\n" + m.QuestionInput.View() + "\n\n" + cont.String())
+	} else {
+		m.QuestionViewport.SetContent(m.RenderQuestion() + "\n\n" + cont.String())
+	}
 	return m.QuestionProgress.View() + "\n\n" + m.QuestionViewport.View()
 }
