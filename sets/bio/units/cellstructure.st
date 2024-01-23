@@ -53,7 +53,7 @@ Blocky cells are from what
 plant
 
 Irregular cells w/out cell wall are what
-plant
+animal
 
 Size of bacteria cell
 <5um
@@ -83,7 +83,7 @@ cytosol
 Structure and movement of cell comes from what
 cytoskeleton
 
-Porous membrane surrounding dna in eukaryote
+Porous double membrane surrounding dna in eukaryote
 Nuclear envelope
 
 System including nuclear envelope, golgi apparatus, ER, lysosomes, vacuoles, etc. (membranes inside cell)

@@ -96,6 +96,9 @@ func (m *Model) RenderQuestion() string {
 			}
 		}
 	}
+	if a, ok := m.Questions[m.Question].Answer.(QuestionAnswerMultiple); ok {
+		out.WriteString(BlankStyle.Render(fmt.Sprintf(" (%d)", len(a.Answers))))
+	}
 	return out.String()
 }
 
