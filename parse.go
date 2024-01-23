@@ -32,6 +32,7 @@ type QuestionAnswerMultiple struct {
 }
 
 type QuestionAnswerBlanks struct {
+	Order   []string
 	Answers map[string]string
 }
 
@@ -66,12 +67,14 @@ func (m *Model) ParseQuestion(inp string, linenum int, file string) (*Question, 
 	inblank := false
 	hasblank := false
 	text := make([]QuestionText, 0)
+	blankOrder := make([]string, 0)
 	for _, ch := range lines[0] {
 		switch ch {
 		case '`':
 			kind := QuestionTextKindText
 			if inblank {
 				kind = QuestionTextKindBlank
+				blankOrder = append(blankOrder, curr)
 			}
 			text = append(text, QuestionText{
 				Kind:  kind,
@@ -108,6 +111,7 @@ func (m *Model) ParseQuestion(inp string, linenum int, file string) (*Question, 
 		}
 		ans = QuestionAnswerBlanks{
 			Answers: res,
+			Order:   blankOrder,
 		}
 	} else {
 		if len(lines) > 2 {
@@ -128,7 +132,7 @@ func (m *Model) ParseFile(path string) ([]Question, tea.Cmd) {
 	if err != nil {
 		return nil, m.HandleErr(err)
 	}
-	qs := strings.SplitN(string(file), "\n\n", 2)
+	qs := strings.Split(strings.ReplaceAll(string(file), "\r", ""), "\n\n")
 	questions := make([]Question, 0, len(qs))
 	for _, q := range qs {
 		if strings.HasPrefix(strings.TrimSpace(q), "include") {
@@ -171,6 +175,10 @@ func (m *Model) InputParseState(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.State = ModelStateQuiz
 		m.FileID = filepath.Base(path)
 		m.UpdateProgress()
+		if len(m.Finished) > 0 {
+			progressCmd := m.QuestionProgress.SetPercent(float64(len(m.Finished)) / float64(len(m.Questions)))
+			return m, tea.Batch(cmd, progressCmd)
+		}
 		return m, cmd
 	}
 	return m, cmd

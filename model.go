@@ -18,6 +18,7 @@ const (
 	ModelStateQuiz
 	ModelStateQuitting
 	ModelStateError
+	ModelStateQuestionResult
 )
 
 type Model struct {
@@ -34,6 +35,10 @@ type Model struct {
 	Finished         map[int]struct{}
 	QuestionProgress progress.Model
 	QuestionViewport viewport.Model
+
+	MultipleAnswerProgress []string
+	BlankAnswers           map[string]string
+	BlankIndex             int
 }
 
 func NewModel() *Model {
@@ -51,6 +56,7 @@ func NewModel() *Model {
 		PaddingRight(2)
 
 	m.Finished = make(map[int]struct{})
+	m.BlankAnswers = make(map[string]string)
 
 	return m
 }
