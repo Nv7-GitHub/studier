@@ -3,7 +3,7 @@ ARG VARIANT=1.21-bookworm
 FROM golang:${VARIANT}
 
 # [Optional] Uncomment the next line to use go get to install anything else you need
-RUN go get -x github.com/Nv7-Github/studier
+RUN go install github.com/Nv7-Github/studier@latest
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
