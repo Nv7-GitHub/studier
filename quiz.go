@@ -157,7 +157,7 @@ func (m *Model) ResultStateView() string {
 		fmt.Fprintf(cont, "%s%s\n\n%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answer: "), a.Answer, MessageStyle.Render("Typo? [y/n]"))
 
 	case QuestionAnswerMultiple:
-		fmt.Fprintf(cont, "%s%s\n\n%s", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answers: \n"))
+		fmt.Fprintf(cont, "%s%s\n\n%s%s\n", ErrStyle.Render("Your answer: "), m.IncorrectAnswer, CorrectStyle.Render("Correct answers:"), strings.Repeat(" ", m.QuestionViewport.Width-21))
 		for _, v := range a.Answers {
 			alreadyfound := false
 			for _, w := range m.MultipleAnswerProgress {
