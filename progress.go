@@ -41,7 +41,8 @@ func (m *Model) IncrQuestion(correct bool) tea.Cmd {
 			panic(err)
 		}
 
-		return tea.Quit
+		m.State = ModelStateFinishing
+		return cmd
 	}
 
 	for i := m.Question + 1; i < len(m.Questions); i++ {

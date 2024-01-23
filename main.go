@@ -14,4 +14,7 @@ func main() {
 		fmt.Println(m.Err)
 		os.Exit(1)
 	}
+	if m.Done {
+		fmt.Println(CorrectStyle.Render("Done!"))
+	}
 }

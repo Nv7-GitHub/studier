@@ -18,6 +18,7 @@ const (
 	ModelStateQuiz
 	ModelStateQuitting
 	ModelStateError
+	ModelStateFinishing
 	ModelStateQuestionResult
 )
 
@@ -40,6 +41,8 @@ type Model struct {
 	BlankAnswers           map[string]string
 	BlankIndex             int
 	IncorrectAnswer        string
+
+	Done bool
 }
 
 func NewModel() *Model {
@@ -103,6 +106,14 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case ModelStateQuestionResult:
 		return m.ResultStateUpdate(msg)
 
+	case ModelStateFinishing:
+		if !m.QuestionProgress.IsAnimating() {
+			m.State = ModelStateQuitting
+			m.Done = true
+			return m, tea.Quit
+		}
+		return m, nil
+
 	default:
 		return m, nil
 	}
@@ -120,7 +131,10 @@ func (m *Model) View() string {
 		return m.ResultStateView()
 
 	case ModelStateError:
-		return "" // Display error after
+		return m.QuizStateView()
+
+	case ModelStateFinishing:
+		return m.QuizStateView()
 
 	default:
 		return "Quitting..."
