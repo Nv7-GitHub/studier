@@ -113,7 +113,7 @@ Jefferson Davis
 Person that led Southern military for the whole war
 Robert E. Lee
 
-As southern Aermy slowly dwindles Richmond is overtaken and when does South surrender
+As southern Army slowly dwindles Richmond is overtaken and when does South surrender
 1865
 
 Riots over the draft were what
@@ -137,7 +137,7 @@ Viskburg
 Where did Davis surrender
 Appomattox court house
 
-Place where South tries to invade North, loses, famous battle that turned the tried
+Place where South tries to invade North, loses, famous battle that turned the tide
 Gettysburg
 
 Thing where Johnson A. Sherman destroys Georgia on his march
