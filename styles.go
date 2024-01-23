@@ -1,17 +1,16 @@
 package main
 
 import (
-	"fmt"
-	"os"
-
+	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 )
 
-var ErrStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("9"))
+var ErrStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("9")).Bold(true)
 var BlankStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("12")).Bold(true)
 
-func (m *Model) HandleErr(msg string) {
+func (m *Model) HandleErr(err error) tea.Cmd {
 	// Red
-	fmt.Println(ErrStyle.Render(msg))
-	os.Exit(1)
+	m.Err = err
+	m.State = ModelStateError
+	return tea.ClearScreen
 }

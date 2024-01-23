@@ -47,7 +47,7 @@ type ParseError struct {
 }
 
 func (p ParseError) Error() string {
-	return fmt.Sprintf("%s:%d: %s", p.File, p.Line, p.Message)
+	return ErrStyle.Render(fmt.Sprintf("%s:%d: ", p.File, p.Line)) + p.Message
 }
 
 func NewParseError(line int, file, msg string) ParseError {
@@ -122,12 +122,14 @@ func (m *Model) ParseQuestion(inp string, linenum int, file string) (*Question, 
 	}, nil
 }
 
-func (m *Model) ParseFile(path string) []Question {
+func (m *Model) ParseFile(path string) ([]Question, tea.Cmd) {
 	// Read file
 	file, err := os.ReadFile(path)
 	if err != nil {
-		m.HandleErr(err.Error())
-		return make([]Question, 0)
+		fmt.Println("GOT PATH ERROR: " + path)
+		fmt.Println(err)
+		os.Exit(1)
+		return nil, m.HandleErr(err)
 	}
 	qs := strings.SplitN(string(file), "\n\n", 2)
 	questions := make([]Question, 0, len(qs))
@@ -138,20 +140,24 @@ func (m *Model) ParseFile(path string) []Question {
 				continue
 			}
 			for _, v := range q[1:] {
-				questions = append(questions, m.ParseFile(filepath.Join(filepath.Dir(v), v))...)
+				path := filepath.Join(filepath.Dir(path), v)
+				vals, cmd := m.ParseFile(path)
+				if cmd != nil {
+					return nil, cmd
+				}
+				questions = append(questions, vals...)
 			}
 			continue
 		}
 
 		question, err := m.ParseQuestion(q, len(questions)+1, path)
 		if err != nil {
-			m.HandleErr(err.Error())
-			return questions
+			return nil, m.HandleErr(err)
 		}
 		questions = append(questions, *question)
 	}
 
-	return questions
+	return questions, nil
 }
 
 func (m *Model) InputParseState(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -159,9 +165,14 @@ func (m *Model) InputParseState(msg tea.Msg) (tea.Model, tea.Cmd) {
 	m.FilePicker, cmd = m.FilePicker.Update(msg)
 
 	if didSelect, path := m.FilePicker.DidSelectFile(msg); didSelect {
-		m.Questions = m.ParseFile(path)
+		var pCmd tea.Cmd
+		m.Questions, pCmd = m.ParseFile(path)
+		if pCmd != nil {
+			return m, pCmd
+		}
+
 		m.State = ModelStateQuiz
-		return m, ChangeStateCmd
+		return m, cmd
 	}
 	return m, cmd
 }

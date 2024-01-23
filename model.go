@@ -11,17 +11,16 @@ const (
 	ModelStateFileInput ModelState = iota
 	ModelStateQuiz
 	ModelStateQuitting
+	ModelStateError
 )
 
 type Model struct {
+	Err error
+
 	State ModelState
 
 	FilePicker filepicker.Model
 	Questions  []Question
-}
-
-func ChangeStateCmd() tea.Msg {
-	return nil
 }
 
 func NewModel() *Model {
@@ -48,6 +47,9 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	}
 
 	switch m.State {
+	case ModelStateError:
+		return m, tea.Quit
+
 	case ModelStateFileInput:
 		return m.InputParseState(msg)
 
@@ -66,6 +68,9 @@ func (m *Model) View() string {
 
 	case ModelStateQuiz:
 		return m.QuizStateView()
+
+	case ModelStateError:
+		return "" // Display error after
 
 	default:
 		return "Quitting..."
