@@ -34,5 +34,11 @@ pluripotent
 Stem cells somewhat specialized in adults that can only do some specific things (e.g. make blood)
 hematopoietic
 
+Stem cells from babies
+embryonic
+
+Stem cells from adults
+somatic
+
 Critical feature about cells
 SA:V Ratio

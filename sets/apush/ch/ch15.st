@@ -116,7 +116,7 @@ compromise of 1877
 Thing that came to the South after reconstruction
 factories
 
-Workers in southern factories due to casualties
+Type of workers in southern factories due to casualties from civil war
 women
 
 Leader of african american education (slave that became educated)
