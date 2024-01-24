@@ -68,7 +68,7 @@ Year of Emancipation proclamation (war not over, only in the union)
 After Emancipation proclamation what did slaves do
 Join Union army
 
-Person that makes women be nurses, transforms job of nuring
+Person that makes women be nurses, transforms job of nursing
 Dorothea Dix
 
 Thing that states do in Confederacy
