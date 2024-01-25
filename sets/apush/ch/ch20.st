@@ -139,3 +139,9 @@ Pinchot-Ballinger Controversy
 Roosevelt's own political party, because he wasn't nominated for Republican party (instead taft was)
 Bull Moose party
 Progressive party
+
+Idea from roosevelt that government should regulate large corporations
+new nationalism
+
+Idea from wilson that large corporations should be broken up
+new freedom
