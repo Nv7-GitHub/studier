@@ -135,3 +135,7 @@ Payne-Aldrich tariff
 
 Dispute between forest reformer and Taft's new secretary of the interior who was conservative (old guard), leads to Taft discrediting
 Pinchot-Ballinger Controversy
+
+Roosevelt's own political party, because he wasn't nominated for Republican party (instead taft was)
+Bull Moose party
+Progressive party
