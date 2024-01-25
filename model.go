@@ -86,7 +86,7 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 
 	case tea.WindowSizeMsg:
-		m.QuestionProgress.Width = msg.Width
+		m.QuestionProgress.Width = msg.Width - 1
 		m.QuestionViewport.Width = msg.Width
 		m.QuestionViewport.Height = msg.Height - 4
 		m.QuestionInput.Width = msg.Width - 8
